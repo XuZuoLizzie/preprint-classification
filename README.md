@@ -22,14 +22,18 @@ Please follow the instructions to reproduce the analysis results.
 
 **Clone repository**
 
-`git clone https://github.com/XuZuoLizzie/preprint-classification.git`
+```
+git clone https://github.com/XuZuoLizzie/preprint-classification.git
+```
 
 **Set up the environment**
 
 The pipeline requires Python 3.8. You can run the analysis pipeline with baseline models on local desktops. 
 Create a virtual environment first for this project:
 
-`conda create -n preprint-classification python=3.8`
+```
+conda create -n preprint-classification python=3.8
+```
 
 **Use baseline model and sample data**
 
@@ -39,7 +43,9 @@ Install required packages:
 
 Run the following script for training and prediction:
 
-`python classification_model.py`
+```
+python classification_model.py
+```
 
 The evaluation results will be printed on your screen:
 
@@ -81,11 +87,15 @@ Download and open Docker Desktop from the Start menu. It should run the Docker d
 
 Build the docker image:
 
-`docker build -t text-classification-app .`
+```
+docker build -t text-classification-app .
+```
 
 Run the docker container:
 
-`docker run text-classification-app`
+```
+docker run text-classification-app
+```
 
 **Run the pipeline with customized datasets**
 
