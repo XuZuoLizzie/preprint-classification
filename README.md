@@ -42,10 +42,21 @@ Run the following script for training and prediction:
 
 The evaluation results will be printed on your screen.
 
+**Run the pipeline with Docker container**
+You can also run this pipeline with a docker container. Docker offers several significant advantages that can streamline development, enhance security, and increase portability across different computing environments. 
+
+Download and open Docker Desktop from the Start menu. It should run the Docker daemon automatically.
+
+Build the docker image:
+
+`docker build -t text-classification-app .`
+
+Run the docker container:
+
+`docker run text-classification-app`
+
 **Run the pipeline with customized datasets**
 
 Note: The pipeline is only applicable to multi-class classification tasks.
 
-If you would like to run this pipeline using your own datasets. 
-Please convert your data into a TSV file.
-Please refer to the sample dataset `preprints.tsv` in `data/` directory.
+If you would like to run this pipeline using your own datasets. Please convert your data into a TSV file. Please refer to the sample dataset `preprints.tsv` in `data/` directory.
