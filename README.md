@@ -3,10 +3,16 @@
 Since the COVID-19 pandemic began, researchers have been investigating effective treatments for the coronavirus. Systematic reviews and meta-analyses of clinical studies are useful approaches to analyzing results from a number of relevant studies, thus increasing the statistical ability to detect the true value of treatments. However, manual search and extraction of biomedical literature can be both time-consuming and laborious. Therefore, this project aims to assist literature screening by developing an automated approach to identify the study type of studies related to COVID-19 treatments.
 ## Task
 This is a multi-label classification task. The first step is data preprocessing, which includes data parsing and feature extraction. Basic features include word shapes, prefix-suffix, and bigrams. Additional features include TD-IDF and word embedding. For the label prediction, I plan to use three machine learning models (logistic regression, XGBoost, and support vector machines) as the baselines. The baseline models will be implemented using the scikit-learn library. Additionally, I plan to test two deep learning models (FastText and TextCNN) on this task. 
-Choices of Language and Libraries
+
+Choices of Language and Libraries:
 - Python: For its robust ecosystem in data handling and machine learning.
 - Scikit-learn and SpaCy: For implementing and deploying machine learning models.
 - Pandas and NumPy: For data manipulation and numerical operations.
+
+Data Quality and Variety:
+- Inconsistent data formats and quality, which were addressed through rigorous data cleaning and preprocessing steps.
+- Imbalanced dataset: Balances the dataset using SMOTE to over-sample the minority classes.
+
 ## Dataset
 The preprints used in this project were pre-labeled as “RCT”, “observational study”, and “other”. I downloaded preprint data, including titles, author names, affiliations, release dates, and abstracts, from preprint servers (MedRxiv and BioRxiv). The preprint datasets are saved as a TSV file. In case preprint datasets are inadequate for training and testing deep learning models, I also plan to retrieve and label additional PubMed articles related to COVID-19 treatments. The PubMed article datasets will be saved as XML files.
 ## Results and evaluation
