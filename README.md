@@ -39,7 +39,9 @@ conda create -n preprint-classification python=3.8
 
 Install required packages:
 
-`pip install -r requirements.txt`
+```
+pip install -r requirements.txt
+```
 
 Run the following script for training and prediction:
 
