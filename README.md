@@ -28,9 +28,10 @@ Please follow the instructions to reproduce the analysis results.
 
 The pipeline requires Python 3.8. You can run the analysis pipeline with baseline models on local desktops. 
 Create a virtual environment first for this project:
+
 `conda create -n preprint-classification python=3.8`
 
-**Prediction with baseline model and sample data**
+**Use baseline model and sample data**
 
 Install required packages:
 
@@ -40,11 +41,41 @@ Run the following script for training and prediction:
 
 `python3 classification_model.py`
 
-The evaluation results will be printed on your screen.
+The evaluation results will be printed on your screen:
 
-**Run the pipeline with Docker container**
+```
+Training SVM model...
+Evaluating SVM model...
+Accuracy: 0.574468085106383
+Classification Report:
+               precision    recall  f1-score   support
 
-You can also run this pipeline with a docker container. Docker offers several significant advantages that can streamline development, enhance security, and increase portability across different computing environments. 
+           0       0.78      0.93      0.85        15
+           1       0.43      0.86      0.57        14
+           2       1.00      0.06      0.11        18
+
+    accuracy                           0.57        47
+   macro avg       0.74      0.62      0.51        47
+weighted avg       0.76      0.57      0.48        47
+
+Training XGBoost model...
+Evaluating XGBoost model...
+Accuracy: 0.9148936170212766
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       1.00      0.87      0.93        15
+           1       0.81      0.93      0.87        14
+           2       0.94      0.94      0.94        18
+
+    accuracy                           0.91        47
+   macro avg       0.92      0.91      0.91        47
+weighted avg       0.92      0.91      0.92        47
+```
+
+**Use Docker container**
+
+You can also run this pipeline using the baseline models and sample data with a docker container. Docker offers several significant advantages that can streamline development, enhance security, and increase portability across different computing environments. 
 
 Download and open Docker Desktop from the Start menu. It should run the Docker daemon automatically.
 
@@ -61,3 +92,5 @@ Run the docker container:
 Note: The pipeline is only applicable to multi-class classification tasks.
 
 If you would like to run this pipeline using your own datasets. Please convert your data into a TSV file. Please refer to the sample dataset `preprints.tsv` in `data/` directory.
+
+The script `download_preprints.py` allows you to download preprints metadata and abstracts from MedRxiv API. 
