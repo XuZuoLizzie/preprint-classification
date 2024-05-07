@@ -43,6 +43,7 @@ Run the following script for training and prediction:
 The evaluation results will be printed on your screen.
 
 **Run the pipeline with Docker container**
+
 You can also run this pipeline with a docker container. Docker offers several significant advantages that can streamline development, enhance security, and increase portability across different computing environments. 
 
 Download and open Docker Desktop from the Start menu. It should run the Docker daemon automatically.
