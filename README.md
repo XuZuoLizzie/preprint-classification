@@ -4,32 +4,33 @@ Since the COVID-19 pandemic began, researchers have been investigating effective
 ## Task
 This is a multi-label classification task. The first step is data preprocessing, which includes data parsing and feature extraction. Basic features include word shapes, prefix-suffix, and bigrams. Additional features include TD-IDF and word embedding. For the label prediction I plan to use three machine learning models (logistic regression, XGBoost, and support vector machines) as the baselines. The baseline models will be implemented using the scikit-learn library. Additionally, I plan to test two deep learning models (FastText and TextCNN) on this task. 
 ## Dataset
-The preprints used in this project were pre-labeled as “RCT”, “observational study”, and “other”. I downloaded preprint data, including titles, author names, affiliations, release dates, and abstracts from preprint servers (MedRxiv and BioRxiv). The preprint datasets are saved as JSON files. In case preprint datasets are inadequate for training and testing deep learning models, I also plan to retrieve and label additional PubMed articles related to COVID-19 treatments. The PubMed article datasets will be saved as XML files.
+The preprints used in this project were pre-labeled as “RCT”, “observational study”, and “other”. I downloaded preprint data, including titles, author names, affiliations, release dates, and abstracts from preprint servers (MedRxiv and BioRxiv). The preprint datasets are saved as a TSV file. In case preprint datasets are inadequate for training and testing deep learning models, I also plan to retrieve and label additional PubMed articles related to COVID-19 treatments. The PubMed article datasets will be saved as XML files.
 ## Resutls and evaluation
-The final deliverables will be the predictive labels of test data. The results will be reported numerically using evaluation metrics. I will also demonstrate results visually by plotting the receiver operating characteristic (ROC) curve. The results reported will be based on 10-fold cross validations.
+The final deliverables will be the predictive labels of test data. The results will be reported numerically using evaluation metrics: precision, recall and f-measure.
 ## Running the pipeline
 Please follow the instructions to reproduce the analysis results.
 
-**Set up the environment**
-
-The pipeline requires Python 3.8.
-You can run the analysis pipeline with baseline models on local desktops. 
-
 **Clone repository**
 
-`git clone https://gitlab.com/bmi6319/2021-spring/xu-zuo.git`
+`git clone https://github.com/XuZuoLizzie/preprint-classification.git`
 
-**Prediction with baseline model**
+**Set up the environment**
+
+The pipeline requires Python 3.8. You can run the analysis pipeline with baseline models on local desktops. 
+Create a virtual environment first for this project:
+`conda create -n preprint-classification python=3.8`
+
+**Prediction with baseline model and sample data**
 
 Install required packages:
 
 `pip install -r requirements.txt`
 
-Run the following script:
+Run the following script for training and prediction:
 
 `python3 classification_model.py`
 
-The evaluation results will be printed onto your screen.
+The evaluation results will be printed on your screen.
 
 **Run the pipeline with customized datasets**
 
@@ -37,5 +38,4 @@ Note: The pipeline is only applicable to multi-class classification tasks.
 
 If you would like to run this pipeline using your own datasets. 
 Please convert your data into a TSV file.
-Please refer to the sample dataset `preprint_classification_data.tsv` in `data` directory.
-In the TSV file, there should be at least two columns: one named `text`, which stores plain text; Another named `study type`, which stores the labels.
+Please refer to the sample dataset `preprints.tsv` in `data/` directory.
