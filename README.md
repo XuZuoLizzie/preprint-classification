@@ -10,8 +10,8 @@ Choices of Language and Libraries:
 - Pandas and NumPy: For data manipulation and numerical operations.
 
 Data Quality and Variety:
-- Inconsistent data formats and quality, which were addressed through rigorous data cleaning and preprocessing steps.
-- Imbalanced dataset: Balances the dataset using SMOTE to over-sample the minority classes.
+- Inconsistent data formats and quality: Enable data cleaning and preprocessing steps.
+- Imbalanced dataset: Balance the dataset using SMOTE to over-sample the minority classes.
 
 ## Dataset
 The preprints used in this project were pre-labeled as “RCT”, “observational study”, and “other”. I downloaded preprint data, including titles, author names, affiliations, release dates, and abstracts, from preprint servers (MedRxiv and BioRxiv). The preprint datasets are saved as a TSV file. In case preprint datasets are inadequate for training and testing deep learning models, I also plan to retrieve and label additional PubMed articles related to COVID-19 treatments. The PubMed article datasets will be saved as XML files.
@@ -39,7 +39,7 @@ Install required packages:
 
 Run the following script for training and prediction:
 
-`python3 classification_model.py`
+`python classification_model.py`
 
 The evaluation results will be printed on your screen:
 
@@ -93,4 +93,4 @@ Note: The pipeline is only applicable to multi-class classification tasks.
 
 If you would like to run this pipeline using your own datasets. Please convert your data into a TSV file. Please refer to the sample dataset `preprints.tsv` in `data/` directory.
 
-The script `download_preprints.py` allows you to download preprints metadata and abstracts from MedRxiv API. 
+The script `download_preprints.py` allows you to download preprints metadata and abstracts from MedRxiv API using a list of DOIs. A sample of downloaded data is provided in `data/preprints_by_dois.tsv`. 
